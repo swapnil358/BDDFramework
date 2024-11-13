@@ -14,7 +14,13 @@ Feature: Job Search on LabCorp Website
     |Design and develop high-quality AEM components, templates, and workflows based on business requirements and technical specifications.|
     |Participate in Agile development processes, including sprint planning, daily stand-ups, and retrospectives.                          |
     |Conduct thorough code reviews to ensure adherence to coding standards, best practices, and security guidelines.                      |
-
+    And I click on Apply Job
+    And Login to workday
+      | username         | password     |
+      | swap@yopmail.com | Qwerty@12345 |
+    And I verify job title
+      | job id       | 2438897       |
+    And I navigate back to job page
 
     Examples:
       | Role |

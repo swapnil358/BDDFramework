@@ -1,7 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -39,5 +41,11 @@ public class BasePage {
         waitForElementToBeVisible(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
+    }
+
+    public static void scrollToView(WebDriver driver, By locator) {
+        WebElement element = driver.findElement(locator); // Locate the element using By
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

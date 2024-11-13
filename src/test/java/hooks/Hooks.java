@@ -7,9 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Hooks {
     public static WebDriver driver;
+    public static Map<String, Object> map;
 
 
 
@@ -21,6 +24,7 @@ public class Hooks {
             driver.manage().window().maximize();
             driver.get("https://www.labcorp.com");
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            map = new HashMap<>();
         }
     }
 
