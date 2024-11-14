@@ -8,7 +8,7 @@ public class WorkdayLoginPage extends BasePage {
 
     // Locators for the login elements
     private By usernameField = By.cssSelector("#input-4"); // Update with the correct locator for the username field
-    private By passwordField = By.cssSelector("input-5"); // Update with the correct locator for the password field
+    private By passwordField = By.cssSelector("#input-5"); // Update with the correct locator for the password field
     private By loginButton = By.xpath("//div[@aria-label='Sign In']"); // Update with the correct locator for the login button
 
     // Constructor
@@ -23,7 +23,7 @@ public class WorkdayLoginPage extends BasePage {
 
     // Method to enter password
     public void enterPassword(String password) {
-        enterText(usernameField,password);
+        enterText(passwordField,password);
     }
 
     // Method to click the login button
