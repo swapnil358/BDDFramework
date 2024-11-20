@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Hooks {
     public static WebDriver driver;
-    public static Map<String, Object> map;
+    public static Map<String, Object> globalMap;
 
 
 
@@ -24,7 +24,7 @@ public class Hooks {
             driver.manage().window().maximize();
             driver.get("https://www.labcorp.com");
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            map = new HashMap<>();
+            globalMap = new HashMap<>();
         }
     }
 

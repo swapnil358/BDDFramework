@@ -18,7 +18,7 @@ public class JobListingPage extends BasePage{
     By listOfJobRequirement = By.xpath("//p[text()=\"Responsibilities:\"]/..//ul//li");
     By applyNow = By.xpath("//*[text()=\"Apply Now\"]");
     By signInBtn = By.xpath("//div[@data-automation-id=\"click_filter\"]");
-    Map<String, Object> map = Hooks.map;
+    Map<String, Object> map = Hooks.globalMap;
     public JobListingPage(WebDriver driver) {
         super(driver);
     }
@@ -63,7 +63,6 @@ public class JobListingPage extends BasePage{
 
     public void navigateBackToJobPage() {
         driver.navigate().back();
-        waitForElementToBeVisible(jobId);
     }
 
 

@@ -4,15 +4,12 @@ import hooks.Hooks;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.LabCorpHomePage;
 import pages.CareersPage;
 import pages.JobListingPage;
 import pages.WorkdayLoginPage;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -95,9 +92,9 @@ public class LabCorpJobSearchSteps {
     @And("I verify job title")
     public void iVerifyJobTitle(DataTable dataTable) {
         Map<String, String> jobDetails = dataTable.asMap(String.class, String.class);
-        String expectedJobId = jobDetails.get("job id");
-        String actualJobId = (String) Hooks.map.get("jobId");
-        Assert.assertEquals("Job ID does not match", expectedJobId, actualJobId);
+        String expectedJobId = jobDetails.get("job title");
+        String actualJobId = (String) Hooks.globalMap.get("jobTitle");
+        Assert.assertEquals("Job Title does not match", expectedJobId, actualJobId);
     }
 
     @And("I navigate back to job page")

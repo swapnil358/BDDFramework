@@ -10,6 +10,7 @@ public class WorkdayLoginPage extends BasePage {
     private By usernameField = By.cssSelector("#input-4"); // Update with the correct locator for the username field
     private By passwordField = By.cssSelector("#input-5"); // Update with the correct locator for the password field
     private By loginButton = By.xpath("//div[@aria-label='Sign In']"); // Update with the correct locator for the login button
+    private By careerHome = By.xpath("data-automation-id=\"navigationItem-Careers Home\"");
 
     // Constructor
     public WorkdayLoginPage(WebDriver driver) {
@@ -29,5 +30,9 @@ public class WorkdayLoginPage extends BasePage {
     // Method to click the login button
     public void clickLoginButton() {
         click(loginButton);
+    }
+
+    public void comeBackToCareerHome(){
+        click(careerHome);
     }
 }

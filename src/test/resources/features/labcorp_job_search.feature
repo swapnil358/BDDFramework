@@ -19,7 +19,7 @@ Feature: Job Search on LabCorp Website
       | username         | password     |
       | swap@yopmail.com | Qwerty@12345 |
     And I verify job title
-      | job id       | 2438897       |
+      | job title | AEM Developer |
     And I navigate back to job page
 
     Examples:

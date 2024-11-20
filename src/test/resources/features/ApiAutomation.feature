@@ -37,9 +37,14 @@ Feature: API Automation using REST Assured
       | order_status    | completed          |
     Then I validate the accuracy of customer information, payment details, and product information
 
+    @payload
     Examples:
       | jsonPayload  |
       | payload.json |
 
+    @payload1
+    Examples:
+      | jsonPayload   |
+      | payload2.json |
 
 
