@@ -18,6 +18,7 @@ public class Hooks {
 
     @Before("@UI")
     public void setUp() {
+        System.out.println("UI mode started");
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
@@ -30,18 +31,20 @@ public class Hooks {
 
     @After("@UI")
     public void tearDown() {
+        System.out.println("UI mode tear down");
         if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
-//    @Before("@API")
-//    public void setUpAPI() {
-//        // Setup code for API tests (if any)
-//    }
-//
-//    @After("@API")
-//    public void tearDownAPI() {
-//        // Cleanup code for API tests (if any)
-//    }
+    @Before("@API")
+    public void setUpAPI() {
+        System.out.println("API mode started");
+    }
+
+    @After("@API")
+    public void tearDownAPI() {
+        System.out.println("API mode tear down");
+    }
+
 }

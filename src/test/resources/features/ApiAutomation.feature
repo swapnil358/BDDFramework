@@ -5,7 +5,7 @@ Feature: API Automation using REST Assured
     Given I perform a GET request to "https://echo.free.beeceptor.com/sample-request?author=beeceptor"
     Then I validate the response includes "path", "ip", and all headers
 
-  @API
+  @API @createUser
   Scenario Outline: Validate the response of a POST Request
 #    Given I perform a POST request to "http://echo.free.beeceptor.com/sample-request?author=beeceptor" with the payload
 #      | order_id      | 12345             |
@@ -25,7 +25,7 @@ Feature: API Automation using REST Assured
       | payload.json |
 
 
-  @API
+  @API @WebAPI
   Scenario Outline: Perform a POST request with updated JSON payload fields
     Given I perform a POST request to "http://echo.free.beeceptor.com/sample-request?author=beeceptor"
     And I load the payload from "<jsonPayload>" and update the following fields:

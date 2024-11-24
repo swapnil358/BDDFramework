@@ -1,6 +1,6 @@
 Feature: Job Search on LabCorp Website
 
-  @SmokeTest @UI
+  @SmokeTest @UI @SmokeTestMobile
   Scenario Outline: Browse to Careers and Verify Job Listing
     Given I am on the LabCorp homepage
     When I navigate to the Careers page

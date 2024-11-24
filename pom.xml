@@ -16,13 +16,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>4.10.0</version>
@@ -67,4 +60,23 @@
 
 
   </dependencies>
+  <build>
+    <plugins>
+      <!-- Maven Surefire Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <includes>
+            <!-- Include your test runner -->
+            <include>**/TestRunner*.java</include>
+          </includes>
+          <systemPropertyVariables>
+            <cucumber.filter.tags>@SmokeTestMobile</cucumber.filter.tags>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
